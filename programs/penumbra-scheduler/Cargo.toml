@@ -1,0 +1,20 @@
+[package]
+name = "penumbra-scheduler"
+version = "0.1.0"
+description = "Penumbra vesting scheduler — CPIs into Umbra to post unobservable unlocks"
+edition = "2021"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "penumbra_scheduler"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.30.1"
