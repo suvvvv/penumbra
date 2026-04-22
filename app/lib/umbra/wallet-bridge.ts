@@ -46,15 +46,19 @@ export function bridgeWalletAdapter(
   return {
     address: publicKey.toBase58(),
     publicKey,
-    signTransaction: (tx) =>
+    signTransaction: async (tx) => {
       // wallet-adapter's typing is looser than Umbra's — safe to cast
       // because both sides accept the same Transaction/VersionedTransaction.
-      signTransaction(tx as unknown as Transaction) as unknown as typeof tx,
+      const signed = await signTransaction(tx as unknown as Transaction);
+      return signed as unknown as typeof tx;
+    },
     signAllTransactions: signAllTransactions
-      ? (txs) =>
-          signAllTransactions(
+      ? async (txs) => {
+          const signed = await signAllTransactions(
             txs as unknown as Transaction[],
-          ) as unknown as typeof txs
+          );
+          return signed as unknown as typeof txs;
+        }
       : undefined,
     signMessage,
   };

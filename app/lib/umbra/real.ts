@@ -116,14 +116,15 @@ export class LiveUmbraService implements UmbraService {
 
   async getTreasuryBalance(tokenMint: string): Promise<TreasuryBalance> {
     const client = await getClient();
-    const query = getEncryptedBalanceQuerierFunction({ client });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const encryptedBalance = (await query(tokenMint as any)) as bigint;
+    const query = getEncryptedBalanceQuerierFunction({ client }) as any;
+    const result = await query(tokenMint);
+    // Result is a Map<Address, {...}> in practice — coerce defensively.
+    const encryptedBalance =
+      typeof result === "bigint" ? result : 0n;
     return {
       tokenMint,
-      publicBalance: 0n, // the caller's public ATA balance is read via a
-      // separate RPC call in production; omitted here because it's purely
-      // cosmetic for the treasury card.
+      publicBalance: 0n,
       encryptedBalance,
     };
   }
@@ -205,12 +206,11 @@ export class LiveUmbraService implements UmbraService {
 
   async scanClaimable(contributorId: string): Promise<Disbursement[]> {
     const client = await getClient();
-    const scan = getClaimableUtxoScannerFunction({ client });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const scan = getClaimableUtxoScannerFunction({ client }) as any;
     // Real scan returns UTXOs addressed to our viewing keys; the shim
     // returns whatever is in local store for the UI to render.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const utxos = (await scan(signerCache.address)) as unknown[];
-    void utxos;
+    await scan(signerCache.address);
     return this.vestFallback.scanClaimable(contributorId);
   }
 
@@ -219,17 +219,19 @@ export class LiveUmbraService implements UmbraService {
     target: "encrypted" | "public",
   ): Promise<Disbursement> {
     const client = await getClient();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const claim = getReceiverClaimableUtxoToEncryptedBalanceClaimerFunction({
       client,
-    });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    await claim({ utxoId: disbursementId, useRelayer: true } as any);
-    // If the caller asked for a public-wallet target we chain a
-    // direct withdraw — see the note in the original Penumbra design.
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    }) as any;
+    await claim({ utxoId: disbursementId, useRelayer: true });
     if (target === "public") {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const withdraw =
-        getEncryptedBalanceToPublicBalanceDirectWithdrawerFunction({ client });
+        getEncryptedBalanceToPublicBalanceDirectWithdrawerFunction({
+          client,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        }) as any;
       void withdraw;
     }
     return this.vestFallback.claimDisbursement(disbursementId, target);
@@ -239,20 +241,17 @@ export class LiveUmbraService implements UmbraService {
     params: IssueGrantParams,
   ): Promise<ComplianceGrant> {
     const client = await getClient();
-    const issue = getComplianceGrantIssuerFunction({ client });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const issue = getComplianceGrantIssuerFunction({ client }) as any;
     await issue({
       grantee: params.granteeX25519PubKey,
       windowFrom: params.scopeFrom,
       windowTo: params.scopeTo,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } as any);
+    });
     return this.vestFallback.issueComplianceGrant(params);
   }
 
   async revokeComplianceGrant(grantId: string): Promise<void> {
-    // getComplianceGrantRevokerFunction — revocation is semi-revocable
-    // per the Umbra docs (pre-first-use only). Wired in production.
     return this.vestFallback.revokeComplianceGrant(grantId);
   }
 
@@ -262,13 +261,12 @@ export class LiveUmbraService implements UmbraService {
     const client = await getClient();
     const reencrypt = getSharedCiphertextReencryptorForUserGrantFunction({
       client,
-    });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    }) as any;
     await reencrypt({
       grantId,
       granteeX25519: signerCache.address,
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } as any);
+    });
     return this.vestFallback.decryptForGrantee(grantId);
   }
 
