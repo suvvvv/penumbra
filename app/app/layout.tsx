@@ -19,6 +19,21 @@ export const metadata: Metadata = {
   title: "Penumbra — Private comp & vesting on Solana",
   description:
     "The only infra on Solana where a token unlock can complete without anyone — except the foundation and its investors — knowing it happened. Powered by Umbra.",
+  metadataBase: new URL("https://penumbra-three.vercel.app"),
+  openGraph: {
+    title: "Penumbra — Private comp & vesting on Solana",
+    description:
+      "The only Solana unlock that nobody sees coming. Private token vesting, payroll, and grants on one Umbra-backed rail.",
+    url: "https://penumbra-three.vercel.app",
+    siteName: "Penumbra",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Penumbra — Private comp & vesting on Solana",
+    description:
+      "The only Solana unlock that nobody sees coming. Built on Umbra.",
+  },
 };
 
 export default function RootLayout({

@@ -4,6 +4,12 @@
 > Private token vesting, payroll, and grants on the same rails.
 > Built on [Umbra Privacy](https://umbraprivacy.com).
 
+🔗 **Live demo:** https://penumbra-three.vercel.app
+🎯 **On-chain proof (devnet):** [Solscan — memo tx with "Penumbra" payload](https://solscan.io/tx/3GsvMRguRirduw3UjrmVjffR4NHjygfwucKCBRGisuCRwQJg3FssA7GYzEu43MtC2VoyP2KsEHzSLCsv7ZTnBJ5T?cluster=devnet)
+💻 **Source:** https://github.com/suvvvv/penumbra
+
+---
+
 Every Solana token unlock is public. Every cliff gets front-run. Every DAO
 contributor has their comp history doxxed by default. Penumbra ends that.
 
