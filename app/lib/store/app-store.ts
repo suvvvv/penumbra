@@ -98,10 +98,14 @@ function reviver(_key: string, value: unknown): unknown {
 
 const bigintStorage = createJSONStorage(() => {
   if (typeof window === "undefined") {
+    // SSR stub — zustand/persist never reads/writes on the server.
     return {
       getItem: () => null,
       setItem: () => {},
       removeItem: () => {},
+      length: 0,
+      clear: () => {},
+      key: () => null,
     } as Storage;
   }
   return window.localStorage;
