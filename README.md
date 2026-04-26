@@ -5,7 +5,8 @@
 > Built on [Umbra Privacy](https://umbraprivacy.com).
 
 🔗 **Live demo:** https://penumbra-three.vercel.app
-🎯 **On-chain proof (devnet):** [Solscan — memo tx with "Penumbra" payload](https://solscan.io/tx/3GsvMRguRirduw3UjrmVjffR4NHjygfwucKCBRGisuCRwQJg3FssA7GYzEu43MtC2VoyP2KsEHzSLCsv7ZTnBJ5T?cluster=devnet)
+🛠 **Deployed program (devnet):** [`6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr`](https://solscan.io/account/6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr?cluster=devnet) · [deploy tx](https://solscan.io/tx/36XSiK3JXnTeZawRCCVzgZtRxDYL9RRVupJLuhLqZQia23ZhsupQJyS8JjcBdbezss6WxFLnhqnxnmmB73VNeE1M?cluster=devnet)
+🎯 **Notarization tx:** [Solscan — memo "Penumbra"](https://solscan.io/tx/3GsvMRguRirduw3UjrmVjffR4NHjygfwucKCBRGisuCRwQJg3FssA7GYzEu43MtC2VoyP2KsEHzSLCsv7ZTnBJ5T?cluster=devnet)
 💻 **Source:** https://github.com/suvvvv/penumbra
 
 ---
@@ -155,7 +156,10 @@ t+quarterly  foundation.attest(investor_x25519, fy_window)
 
 - `PenumbraScheduler` devnet program id:
   `6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr`
-  ([Solscan](https://solscan.io/account/6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr?cluster=devnet))
+  ([Solscan — program account](https://solscan.io/account/6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr?cluster=devnet))
+- Deploy transaction:
+  [`36XSiK3JXnTeZawRCCVzgZtRxDYL9RRVupJLuhLqZQia23ZhsupQJyS8JjcBdbezss6WxFLnhqnxnmmB73VNeE1M`](https://solscan.io/tx/36XSiK3JXnTeZawRCCVzgZtRxDYL9RRVupJLuhLqZQia23ZhsupQJyS8JjcBdbezss6WxFLnhqnxnmmB73VNeE1M?cluster=devnet)
+- Upgrade authority: `2gxmyPVvXYir9Gt8oFRW7YVTatfkjcd2awRqf1EFMdtd`
 - Umbra SDK version: `@umbra-privacy/sdk@4.0.0`
 - Umbra devnet endpoints (auto-configured):
   - indexer: `https://utxo-indexer.api-devnet.umbraprivacy.com`
