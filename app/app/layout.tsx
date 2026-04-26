@@ -26,6 +26,7 @@ export const metadata: Metadata = {
       "The only Solana unlock that nobody sees coming. Private token vesting, payroll, and grants on one Umbra-backed rail.",
     url: "https://penumbra-three.vercel.app",
     siteName: "Penumbra",
+    images: ["/logo.png"],
     type: "website",
   },
   twitter: {
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     title: "Penumbra — Private comp & vesting on Solana",
     description:
       "The only Solana unlock that nobody sees coming. Built on Umbra.",
+    images: ["/logo.png"],
   },
 };
 

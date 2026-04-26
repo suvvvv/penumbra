@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
-import { Shield, Moon, RotateCcw } from "lucide-react";
+import { Shield, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { useAppStore } from "@/lib/store/app-store";
 import { NETWORK } from "@/lib/constants";
@@ -119,9 +120,15 @@ export function TopNav() {
       <div className="mx-auto max-w-7xl px-6 md:px-10 h-14 flex items-center justify-between gap-6">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="relative h-7 w-7 rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[#5b21b6] flex items-center justify-center shadow-[0_0_20px_-4px_var(--color-accent-glow)]">
-              <Moon className="h-4 w-4 text-white" strokeWidth={2.5} />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Penumbra"
+              width={28}
+              height={28}
+              priority
+              className="rounded-lg shadow-[0_0_20px_-4px_var(--color-accent-glow)]"
+            />
+
             <div className="flex items-baseline gap-2">
               <span className="text-base font-semibold tracking-tight">
                 Penumbra
