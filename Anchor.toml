@@ -6,10 +6,10 @@ seeds = false
 skip-lint = false
 
 [programs.devnet]
-penumbra_scheduler = "PnmBR4SchEd1uLer7vJ8kH3MqZ2fT5xN9cVrG6wY1aBd"
+penumbra_scheduler = "6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr"
 
 [programs.localnet]
-penumbra_scheduler = "PnmBR4SchEd1uLer7vJ8kH3MqZ2fT5xN9cVrG6wY1aBd"
+penumbra_scheduler = "6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr"
 
 [registry]
 url = "https://api.apr.dev"

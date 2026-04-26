@@ -23,7 +23,7 @@ export const DEPLOYMENT = {
   cluster: "devnet" as const,
   programId:
     process.env.NEXT_PUBLIC_PENUMBRA_PROGRAM_ID ??
-    "PnmBR4SchEd1uLer7vJ8kH3MqZ2fT5xN9cVrG6wY1aBd",
+    "6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr",
   deployTxSig: process.env.NEXT_PUBLIC_PENUMBRA_DEPLOY_TX ?? PROOF_TX_SIG,
   firstScheduleInitTx:
     process.env.NEXT_PUBLIC_PENUMBRA_INIT_TX ?? PROOF_TX_SIG,

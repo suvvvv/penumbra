@@ -1,3 +1,7 @@
+# anchor / solana — NEVER commit (contains program keypair secret)
+target/
+.anchor/
+
 # dependencies
 node_modules/
 .pnp

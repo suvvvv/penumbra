@@ -38,7 +38,7 @@
 
 use anchor_lang::prelude::*;
 
-declare_id!("PnmBR4SchEd1uLer7vJ8kH3MqZ2fT5xN9cVrG6wY1aBd");
+declare_id!("6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr");
 
 /// Umbra Privacy protocol program id on Solana devnet.
 ///

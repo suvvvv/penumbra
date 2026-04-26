@@ -17,7 +17,7 @@ export const SEED_FOUNDATION = {
   tgeAt: iso(now - 40 * day),
   circulatingSupply: 225_000_000n * 10n ** 9n,
   publicPriceUsd: 1.42,
-  schedulerProgramId: "PnmBR4SchEd1uLer7vJ8kH3MqZ2fT5xN9cVrG6wY1aBd",
+  schedulerProgramId: "6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr",
 };
 
 export const SEED_INVESTORS: Investor[] = [

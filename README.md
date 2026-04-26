@@ -154,7 +154,8 @@ t+quarterly  foundation.attest(investor_x25519, fy_window)
 ## Deployed artifacts
 
 - `PenumbraScheduler` devnet program id:
-  `PnmBR4SchEd1uLer7vJ8kH3MqZ2fT5xN9cVrG6wY1aBd`
+  `6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr`
+  ([Solscan](https://solscan.io/account/6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr?cluster=devnet))
 - Umbra SDK version: `@umbra-privacy/sdk@4.0.0`
 - Umbra devnet endpoints (auto-configured):
   - indexer: `https://utxo-indexer.api-devnet.umbraprivacy.com`

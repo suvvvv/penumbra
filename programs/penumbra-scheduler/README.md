@@ -37,7 +37,7 @@ imports it at build time (see `app/lib/anchor/`).
 
 ## Program ID
 
-- **Devnet:** `PnmBR4SchEd1uLer7vJ8kH3MqZ2fT5xN9cVrG6wY1aBd`
+- **Devnet:** `6ZajuboUT9uBgnY9RBbHdErx1rTg6kMjSFkocT1WLbdr`
 - **Umbra program (CPI target):** `uMBr4PrivAcySol4n4Pr0gr4mId1234567890abcdef`
   (resolved at build time from `@umbra-privacy/sdk/constants`).
 
